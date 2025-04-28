@@ -5,6 +5,9 @@ import userRoutes from "./routes/users.routes.js"
 
 const app = express();
 
+//esto se debe pponer antes de usar las rutas para que entienda json
+app.use(express.json());
+
 app.use(indexRoutes);
 app.use(userRoutes);
 
