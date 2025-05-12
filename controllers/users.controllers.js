@@ -71,12 +71,12 @@ export const deleteUser = (req, res) => {
 
 //DONE
 export const login = (req, res) => {
-    const { username, pass, id_users } = req.body; //debes llamar EXACTAMENTE el nombre de la propiedad para que dentro del body las encuentre
+    const { username, pass } = req.body; //debes llamar EXACTAMENTE el nombre de la propiedad para que dentro del body las encuentre
     console.log(req.body);
     
     pool.execute(
-        "SELECT * FROM users WHERE username = ? and id_users = ?"
-        ,[ username, id_users ], (error, results) => {
+        "SELECT * FROM users WHERE username = ?"
+        ,[ username ], (error, results) => {
         if (error){
             res.status(500).json({msg : error.message, users : {} });
             return;
