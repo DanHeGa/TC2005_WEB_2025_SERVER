@@ -7,7 +7,7 @@ router.get("/users", getUsers );
 router.get("/users/:id", getUser);
 router.post("/users", postUsers);
 router.put("/users/:id", putUsers);
-router.delete("/users/:id", deleteUser);
+router.delete("/users/:username", deleteUser);
 router.post("/login", login);
 
 
